@@ -25,7 +25,7 @@ NICKNAME_REGEX = re.compile(r"^[\w .\-]{3,20}$", re.UNICODE)
 intents = discord.Intents.default()
 intents.members = True  # needed to edit nicknames / add roles
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="+", intents=intents)
 
 
 def validate_nickname(nick: str) -> tuple[bool, str]:
@@ -182,3 +182,4 @@ if not token:
     raise RuntimeError("Missing DISCORD_TOKEN env var. Set it before running.")
 
 bot.run(token)
+
